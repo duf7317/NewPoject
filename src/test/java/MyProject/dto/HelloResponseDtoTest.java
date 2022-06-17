@@ -1,4 +1,4 @@
-package MyProject.Controller.dto;
+package MyProject.dto;
 
 
 import org.junit.jupiter.api.Test;

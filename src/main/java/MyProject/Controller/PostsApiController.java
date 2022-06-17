@@ -1,7 +1,9 @@
 package MyProject.Controller;
 
 
-import MyProject.Controller.dto.PoststSaveRequestDto;
+import MyProject.dto.PostsResponseDto;
+import MyProject.dto.PostsUpdateRequestDto;
+import MyProject.dto.PoststSaveRequestDto;
 import MyProject.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

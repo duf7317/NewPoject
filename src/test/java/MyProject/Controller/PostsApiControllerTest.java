@@ -1,7 +1,8 @@
 package MyProject.Controller;
 
 
-import MyProject.Controller.dto.PoststSaveRequestDto;
+import MyProject.dto.PostsUpdateRequestDto;
+import MyProject.dto.PoststSaveRequestDto;
 import MyProject.domain.Posts.Posts;
 import MyProject.domain.Posts.PostsRepository;
 import org.junit.After;
@@ -57,8 +58,6 @@ public class PostsApiControllerTest {
         List<Posts> all = postsRepository.findAll();
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContent()).isEqualTo(content);
-
-
     }
     @Test
     public void update() throws Exception {

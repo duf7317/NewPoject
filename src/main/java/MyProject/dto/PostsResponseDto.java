@@ -1,4 +1,4 @@
-package MyProject.Controller;
+package MyProject.dto;
 
 import MyProject.domain.Posts.Posts;
 import lombok.Getter;

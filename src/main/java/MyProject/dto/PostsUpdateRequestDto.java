@@ -1,4 +1,4 @@
-package MyProject.Controller;
+package MyProject.dto;
 
 
 import lombok.Builder;

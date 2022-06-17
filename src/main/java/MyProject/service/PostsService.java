@@ -1,9 +1,9 @@
 package MyProject.service;
 
 
-import MyProject.Controller.PostsResponseDto;
-import MyProject.Controller.PostsUpdateRequestDto;
-import MyProject.Controller.dto.PoststSaveRequestDto;
+import MyProject.dto.PostsResponseDto;
+import MyProject.dto.PostsUpdateRequestDto;
+import MyProject.dto.PoststSaveRequestDto;
 import MyProject.domain.Posts.Posts;
 import MyProject.domain.Posts.PostsRepository;
 import lombok.RequiredArgsConstructor;
