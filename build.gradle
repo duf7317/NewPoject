@@ -1,6 +1,6 @@
 // gradle 버전 설정 라이브러리 가져오기
 plugins {
-    id 'org.springframework.boot' version '2.7.0'
+    id 'org.springframework.boot' version '2.6.8'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
