@@ -1,21 +1,25 @@
 package MyProject.service;
 
 
-import MyProject.dto.PostsResponseDto;
-import MyProject.dto.PostsUpdateRequestDto;
-import MyProject.dto.PoststSaveRequestDto;
 import MyProject.domain.Posts.Posts;
 import MyProject.domain.Posts.PostsRepository;
+import MyProject.dto.PostsListResponseDto;
+import MyProject.dto.PostsResponseDto;
+import MyProject.dto.PostsSaveRequestDto;
+import MyProject.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
 public class PostsService {
     private final PostsRepository postsRepository;
     @Transactional
-    public Long save(PoststSaveRequestDto requestDto) {
+    public Long save(PostsSaveRequestDto requestDto) {
         return  postsRepository.save(requestDto.toEntity()).getId();
 
     }
@@ -32,5 +36,13 @@ public class PostsService {
        Posts entity = postsRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
 
        return new PostsResponseDto(entity);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc(){
+        return postsRepository.findAllDesc()
+                .stream()
+                .map(posts -> new PostsListResponseDto(posts))
+                .collect(Collectors.toList());
     }
 }

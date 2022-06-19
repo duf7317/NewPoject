@@ -3,7 +3,7 @@ package MyProject.Controller;
 
 import MyProject.dto.PostsResponseDto;
 import MyProject.dto.PostsUpdateRequestDto;
-import MyProject.dto.PoststSaveRequestDto;
+import MyProject.dto.PostsSaveRequestDto;
 import MyProject.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class PostsApiController {
     private final PostsService postsService;
 
     @PostMapping("/api/v1/posts")
-    public Long save (@RequestBody PoststSaveRequestDto requestDto){
+    public Long save (@RequestBody PostsSaveRequestDto requestDto){
         return postsService.save(requestDto);
     }
 

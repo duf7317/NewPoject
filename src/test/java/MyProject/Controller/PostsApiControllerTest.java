@@ -2,7 +2,7 @@ package MyProject.Controller;
 
 
 import MyProject.dto.PostsUpdateRequestDto;
-import MyProject.dto.PoststSaveRequestDto;
+import MyProject.dto.PostsSaveRequestDto;
 import MyProject.domain.Posts.Posts;
 import MyProject.domain.Posts.PostsRepository;
 import org.junit.After;
@@ -45,7 +45,7 @@ public class PostsApiControllerTest {
         //given
         String title = "title";
         String content = "content";
-        PoststSaveRequestDto requestDto = PoststSaveRequestDto.builder().title(title).content(content).author("author").build();
+        PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder().title(title).content(content).author("author").build();
 
         String url = "http://localhost:" + port + "/api/v1/posts";
         //when
