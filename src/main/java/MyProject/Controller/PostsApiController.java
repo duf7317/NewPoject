@@ -2,8 +2,8 @@ package MyProject.Controller;
 
 
 import MyProject.dto.PostsResponseDto;
-import MyProject.dto.PostsUpdateRequestDto;
 import MyProject.dto.PostsSaveRequestDto;
+import MyProject.dto.PostsUpdateRequestDto;
 import MyProject.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -29,5 +29,9 @@ public class PostsApiController {
     {
         return postsService.findById(id);
     }
-
+    @DeleteMapping("/api/v1/posts/{id}")
+    public String Delete(@PathVariable Long id){
+        postsService.delete(id);
+        return "삭제 완료 되었습니다. id = {id}";
+    }
 }

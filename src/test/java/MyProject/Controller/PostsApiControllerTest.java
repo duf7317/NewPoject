@@ -1,22 +1,23 @@
 package MyProject.Controller;
 
 
-import MyProject.dto.PostsUpdateRequestDto;
-import MyProject.dto.PostsSaveRequestDto;
 import MyProject.domain.Posts.Posts;
 import MyProject.domain.Posts.PostsRepository;
+import MyProject.dto.PostsSaveRequestDto;
+import MyProject.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -81,6 +82,7 @@ public class PostsApiControllerTest {
         String url = "http://localhost:" + port + "/api/v1/posts/" + updateId;
 
         HttpEntity<PostsUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
+        System.out.println(requestEntity);
         //when
         ResponseEntity<Long> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, Long.class);
 
@@ -95,5 +97,18 @@ public class PostsApiControllerTest {
 
     @Test
     public void findById() {
+        //given
+
+        //when
+
+        //then
+    }
+    @Test
+    public void delete() {
+        //given
+
+        //when
+
+        //then
     }
 }
