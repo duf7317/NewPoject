@@ -1,16 +1,22 @@
 {{! include layout폴더에 header머스테치 }}
 {{>layout/header}}
-   
-
-
-
     <h1>BS가나다라</h1>
-
-
     <div class="col_md-12">
+    <!-- 로그인기능 영역 -->
         <div class="row">
             <div class="col-md-6">
                 <a href="/posts/save" role="button" class="btn btn-primary">글등록</a>
+            {{#userName}}
+            {{!userName이 있으면}}
+               Logged in as : <span id ="user">{{userName}}</span>
+                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+            {{!userName이 까지실행}}
+            {{/userName}}
+            {{^userName}}
+            {{!userName이 없으면}}
+                <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+            {{!userName이 까지실행}}
+            {{/userName}}
             </div>
             <br>
             <table class="table table-horizontal table-borderd">
