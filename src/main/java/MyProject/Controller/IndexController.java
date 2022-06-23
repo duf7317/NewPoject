@@ -1,5 +1,6 @@
 package MyProject.Controller;
 
+import MyProject.config.auth.LoginUser;
 import MyProject.domain.Posts.PostsRepository;
 import MyProject.domain.User.SessionUser.SessionUser;
 import MyProject.dto.PostsResponseDto;
@@ -20,9 +21,9 @@ public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsRepository.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null){
             model.addAttribute("userName", user.getName());
         }
