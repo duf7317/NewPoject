@@ -16,9 +16,9 @@ repositories {
 
 // spring framework dependency
 dependencies {
-//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    implementation 'org.springframewrok.boot:spring-session-jdbc'
+    implementation 'org.springframework.session:spring-session-jdbc'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
